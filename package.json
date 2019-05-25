@@ -1,0 +1,23 @@
+{
+  "name": "vue-course",
+  "version": "1.0.0",
+  "description": "- 渐进式的框架 cdn -> vue-router -> vuex -> vue-cli3 - MVVM  (MVC->Controller Model View)  (MVVM-> Model View ViewModel->dom监听  数据绑定) - 声明式 VS 命令式 (forEach reduce map filter) for",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaixinrenweb/vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaixinrenweb/vue/issues"
+  },
+  "homepage": "https://github.com/kaixinrenweb/vue#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}

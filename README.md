@@ -1,5 +1,6 @@
-# vue
-- 渐进式框架
-- MVVM
-- 声明式 vs 命令式
+## vue
+- 渐进式的框架 cdn -> vue-router -> vuex -> vue-cli3
+- MVVM  (MVC->Controller Model View)  (MVVM-> Model View ViewModel->dom监听  数据绑定)
+- 声明式 VS 命令式 (forEach reduce map filter) for
+
 
