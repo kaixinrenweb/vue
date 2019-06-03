@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  mustache 小胡子语法 可以做运算 输出 取值 三元  不能写js语法 -->
+    <!--  只要使用vue的数据，需要先声明， 再使用它 -->
+    <div id="app">
+        {{msg}} {{1+1}} {{(function(){return 1})()}}
+        {{ flag ? 'true' : 'false' }}
+        {{info.a}}
+        {{ {} }}
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            //el: "#app",
+            data(){
+                return {
+                    msg: "hello",
+                    flag: true,
+                    info: {}
+                };
+            }
+        });
+        vm.$mount("#app");
+        // vm.$el 指代的就是当前的元素
+        // vm.$data 当前的数据对象
+        // vm.$nextTick 延迟执行 dom操作必备
+        // vm.$watch  监控数据的变化
+        // vm.$options 所有的选项信息
+        // vm.$set 动态加一个数据，并且实现数据劫持
+        // vm.$mount 挂载 在内存中去挂载vue实例  此时用mount
+        vm.$watch('msg', (newVal, oldVal)=>{// 可以观察某个数据 发生变化后触发
+            console.log(newVal, oldVal);
+        });
+        vm.msg = 'tales'    //dom更新是异步
+        vm.msg = "t";
+        vm.msg = "h";
+        vm.$nextTick(()=>{
+            console.log(vm.$el.innerHTML);
+        });
+        
+    </script>
+</body>
+</html>
