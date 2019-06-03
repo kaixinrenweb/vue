@@ -3,4 +3,7 @@
 - MVVM  (MVC->Controller Model View)  (MVVM-> Model View ViewModel->dom监听  数据绑定)
 - 声明式 VS 命令式 (forEach reduce map filter) for
 
+## 数据劫持
+- `object.defineProperty` 来模拟
+- `vue3 -> proxy` 模拟
 
