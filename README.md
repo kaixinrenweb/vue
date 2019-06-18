@@ -22,3 +22,4 @@
 - v-if / v-show
 - v-on
 - v-once
+- v-html
