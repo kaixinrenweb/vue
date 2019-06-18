@@ -19,3 +19,6 @@
 - v-for
 - v-bind
 - template
+- v-if / v-show
+- v-on
+- v-once

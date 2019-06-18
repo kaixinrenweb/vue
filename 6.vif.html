@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if / v-else / v-show -->
+        <!-- <template v-if="flag">
+            展示
+        </template>
+        <template v-else>不展示</template> -->
+
+        <!-- v-show 不能配合template一起使用的 -->
+        <div v-show="flag">
+                展示
+        </div>
+        <div v-show="!flag">不展示</div>
+
+        <!-- v-on 绑定事件 -->
+        <div>{{flag}}</div>
+        <button @click="fn($event, 5)">切换</button>
+
+        <div v-if="flag">
+            <label>中国</label>
+            <input type="text" key="1" />
+        </div>
+        <div v-else>
+            <label>法国</label>
+            <input type="text" key="2" />
+        </div>
+
+        <!-- v-once只绑定一次 -->
+        <!-- 只是渲染一次  渲染后就会产生缓存下次更新的时候，直接从缓存里面获取 有效的防止重新渲染 -->
+        <div v-once>{{flag}}</div>
+
+        <!-- v-html -->
+        <!-- innerHTML 导致xss攻击  防止xss攻击，不要把用户输入的内容直接显示出来 -->
+        <input type="text" :value="element" @input="e=>{element=e.target.value}"/>
+        <input type="text" v-model="element"/>
+        <div v-html="element"></div>
+
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 所有的数据都会合到vm的实例上 会被data覆盖掉，不要声明相同的名字
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                flag: true,
+                element: "<h1>hello</h1>",
+            },  
+            methods: {
+                fn(e, data){ // window.addEventListener
+                    console.log(e, data);
+                    this.flag = !this.flag;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
