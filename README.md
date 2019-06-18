@@ -8,3 +8,14 @@
 - `vue3 -> proxy` 模拟
 
 ## vue里面的小胡子语法 & api
+- vm.$el
+- vm.$data
+- vm.$options
+- vm.$nextTick
+- vm.$mount
+- vm.$watch
+
+## vue的指令
+- v-for
+- v-bind
+- template

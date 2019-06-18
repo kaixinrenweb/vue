@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue指令 有特定功能的 操作dom元素 v-开头的 -->
+    <!-- 数据都是需要循环来操作的 {} ([] 5) string -->
+    <!-- for(let a of arrs) -->
+    <!--  vue 2.5+开始 要求循环的时候，必须增加key属性 为了做domdiff -->
+    <!-- v-bind  是动态绑定属性的 所有的指令中的值 都是变量 如果是字符串需要加引号 -->
+    <!-- template是vue自带的无意义的标签  template上不能增加key的属性的 需要加给真实的dom元素-->
+    <div id="app"> 
+        <template v-for="(a, index) in arrs" >
+            <li :key=`${index}_1` :a=`${index}_1`>{{a}}  {{index}}</li>
+            <li :key="index">{{a}}  {{index}}</li>
+        </template>
+
+        <template v-for="(value,key) in {a:1}">
+            <li>{{value}} - {{key}}</li>
+        </template>
+
+        <template v-for="(value,key) in 5">
+                <li>{{value}} - {{key}}</li>
+        </template>
+
+        <!-- 尽量不要给动态的数据 用索引来渲染key -->
+        <!-- [香蕉, 苹果, 桔子]
+        <li x>香蕉</li>     <li j>桔子</li>
+        <li p>苹果</li>     <li p>苹果</li>
+        <li j>桔子</li>     <li x>香蕉</li> -->
+        
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "hello",
+                arrs: [3,4,5]
+            }
+        });
+    </script>
+</body>
+</html>
